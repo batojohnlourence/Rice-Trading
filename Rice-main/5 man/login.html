@@ -3,61 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5man's Rice Trading | Login</title>
+    <title>5man's Rice Trading | Log In or Sign Up</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    <section class="login-page">
-        <div class="login-box">
-
-            <!-- ===== LOGIN FORM (shown first) ===== -->
-            <form id="login-form">
-                <img src="images/logo.png" alt="logo" style="mix-blend-mode: normal; margin: auto; padding: 10px;margin-bottom: 10px;" width="150px">
-                <h1>Welcome Back!</h1>
-                <p class="login-subtitle">Please log in to your account</p>
-
-                <div class="form-group">
-                    <label for="login-username">Username</label>
-                    <input type="text" id="login-username" required>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html"><img src="images/logo.png" alt="5man's Rice Trading logo" class="logo"></a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="product.html">Product</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="account-menu">
+                <a href="login.html" class="btn account-login hidden">Log In</a>
+                <div class="account-dropdown hidden" data-account-dropdown>
+                    <button type="button" class="btn account-trigger" aria-haspopup="true" aria-expanded="false">&#128100; My Account</button>
+                    <div class="account-menu-panel hidden" role="menu">
+                        <a href="profile.html" role="menuitem"><span aria-hidden="true">&#128100;</span> My Profile</a>
+                        <a href="my-inquiries.html" role="menuitem"><span aria-hidden="true">&#128203;</span> My Inquiries</a>
+                        <button type="button" class="account-logout" role="menuitem"><span aria-hidden="true">&#10162;</span> Log Out</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" required>
-                </div>
-
-                <button type="submit" class="btn">Login</button>
-                <p class="form-message" id="login-note"></p>
-                <p class="switch-text">No account yet? <a href="#" id="show-signup">Sign Up</a></p>
-            </form>
-
-            <!-- ===== SIGN UP FORM (hidden until "Sign Up" is clicked) ===== -->
-            <form id="signup-form" class="hidden">
-                <img src="images/logo.png" alt="logo" style="mix-blend-mode: normal; margin: auto; padding: 10px;margin-bottom: 10px;" width="150px">
-                <h1>Create Account</h1>
-                <p class="login-subtitle">Sign up to get started</p>
-
-                <div class="form-group">
-                    <label for="signup-username">Username</label>
-                    <input type="text" id="signup-username" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-password">Password</label>
-                    <input type="password" id="signup-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-repeat">Repeat Password</label>
-                    <input type="password" id="signup-repeat" required>
-                </div>
-
-                <button type="submit" class="btn">Sign Up</button>
-                <p class="form-message" id="signup-note"></p>
-                <p class="switch-text">Already have an account? <a href="#" id="show-login">Login</a></p>
-            </form>
-
+            </div>
         </div>
-    </section>
+    </header>
 
+    <main class="auth-page">
+        <div class="container auth-shell">
+            <section class="auth-story" aria-labelledby="auth-story-title">
+                <div class="auth-brand">
+                    <img src="images/logo.png" alt="">
+                    <span>5man's Rice Trading</span>
+                </div>
+                <p class="auth-eyebrow">A trusted source for quality rice</p>
+                <h1 id="auth-story-title">Good rice. Reliable service. A simpler way to order.</h1>
+                <p class="auth-story-copy">Create an account to keep your profile details together and review the product inquiries you send to our team.</p>
+                <div class="auth-story-note">
+                    <span aria-hidden="true">&#127793;</span>
+                    <p>Dependable rice choices for homes, stores, and businesses across Davao.</p>
+                </div>
+            </section>
+
+            <section class="auth-panel" aria-label="Customer account">
+                <form id="login-form" class="auth-form">
+                    <p class="auth-form-eyebrow">Welcome back</p>
+                    <h2>Log in to your account</h2>
+                    <p class="auth-form-intro">Use your account username and password to continue.</p>
+
+                    <div class="form-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" placeholder="Enter your username" autocomplete="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <div class="password-field">
+                            <input type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password" required>
+                            <button type="button" class="password-toggle" data-password-toggle="login-password" aria-pressed="false">Show</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn auth-submit">Log In</button>
+                    <p class="form-message" id="login-note" role="status" aria-live="polite"></p>
+                    <p class="switch-text">New to 5man's Rice Trading? <a href="#signup-form" id="show-signup">Create an account</a></p>
+                </form>
+
+                <form id="signup-form" class="auth-form hidden" novalidate>
+                    <p class="auth-form-eyebrow">Join our customers</p>
+                    <h2>Create your account</h2>
+                    <p class="auth-form-intro">A few details are all you need to get started.</p>
+
+                    <div class="form-group">
+                        <label for="signup-display-name">Display name</label>
+                        <input type="text" id="signup-display-name" placeholder="Name shown on your profile" autocomplete="name" maxlength="100" required>
+                        <span class="field-hint" id="signup-display-note" aria-live="polite">This is the name displayed on your profile.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-username">Username</label>
+                        <input type="text" id="signup-username" placeholder="Choose a sign-in username" autocomplete="username" minlength="3" required>
+                        <span class="field-hint" id="signup-username-note" aria-live="polite">At least 3 characters. You will use this to log in.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <div class="password-field">
+                            <input type="password" id="signup-password" placeholder="Create a password" autocomplete="new-password" minlength="8" required>
+                            <button type="button" class="password-toggle" data-password-toggle="signup-password" aria-pressed="false">Show</button>
+                        </div>
+                        <span class="field-hint" id="signup-password-note" aria-live="polite">Use at least 8 characters.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-repeat">Confirm password</label>
+                        <div class="password-field">
+                            <input type="password" id="signup-repeat" placeholder="Enter the password again" autocomplete="new-password" required>
+                            <button type="button" class="password-toggle" data-password-toggle="signup-repeat" aria-pressed="false">Show</button>
+                        </div>
+                        <span class="field-hint field-error" id="signup-confirm-note" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit" class="btn auth-submit" id="signup-submit">Create Account</button>
+                    <p class="form-message" id="signup-note" role="status" aria-live="polite"></p>
+                    <p class="switch-text">Already have an account? <a href="#login-form" id="show-login">Log In</a></p>
+                </form>
+            </section>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>

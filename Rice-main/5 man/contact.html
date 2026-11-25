@@ -19,7 +19,17 @@
                 <a href="product.html">Product</a>
                 <a href="contact.html" class="active">Contact</a>
             </nav>
-            <a href="login.html" class="btn">Login</a>
+            <div class="account-menu">
+                <a href="login.html" class="btn account-login hidden">Log In</a>
+                <div class="account-dropdown hidden" data-account-dropdown>
+                    <button type="button" class="btn account-trigger" aria-haspopup="true" aria-expanded="false">&#128100; My Account</button>
+                    <div class="account-menu-panel hidden" role="menu">
+                        <a href="profile.html" role="menuitem"><span aria-hidden="true">&#128100;</span> My Profile</a>
+                        <a href="my-inquiries.html" role="menuitem"><span aria-hidden="true">&#128203;</span> My Inquiries</a>
+                        <button type="button" class="account-logout" role="menuitem"><span aria-hidden="true">&#10162;</span> Log Out</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 

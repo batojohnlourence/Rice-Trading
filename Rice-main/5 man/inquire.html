@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5man's Rice Trading | Product Inquiry</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html"><img src="images/logo.png" alt="5man's Rice Trading logo" class="logo"></a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="product.html">Product</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="account-menu">
+                <a href="login.html" class="btn account-login hidden">Log In</a>
+                <div class="account-dropdown hidden" data-account-dropdown>
+                    <button type="button" class="btn account-trigger" aria-haspopup="true" aria-expanded="false">&#128100; My Account</button>
+                    <div class="account-menu-panel hidden" role="menu">
+                        <a href="profile.html" role="menuitem"><span aria-hidden="true">&#128100;</span> My Profile</a>
+                        <a href="my-inquiries.html" role="menuitem"><span aria-hidden="true">&#128203;</span> My Inquiries</a>
+                        <button type="button" class="account-logout" role="menuitem"><span aria-hidden="true">&#10162;</span> Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Product Inquiry</h1>
+            <p>Tell us what you need and our team will be in touch.</p>
+        </div>
+    </section>
+
+    <section class="section section-gray">
+        <div class="container">
+            <a href="product.html" class="inquiry-back">&larr; Back to Products</a>
+            <div class="inquiry-layout">
+                <article class="contact-box inquiry-product" id="inquiry-product" aria-live="polite">
+                    <p>Loading product details...</p>
+                </article>
+
+                <div class="contact-box">
+                    <h2>Ask About This Product</h2>
+                    <p class="inquiry-intro">Log in before submitting an inquiry. Your selected product and form details will be kept while you sign in.</p>
+                    <form id="inquiry-form">
+                        <div class="form-group">
+                            <label for="inquiry-name">Full Name</label>
+                            <input type="text" id="inquiry-name" required maxlength="100" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry-email">Email Address</label>
+                            <input type="email" id="inquiry-email" required maxlength="254" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry-phone">Contact Number</label>
+                            <input type="tel" id="inquiry-phone" required maxlength="50" autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry-quantity">Quantity Interested In</label>
+                            <input type="text" id="inquiry-quantity" required maxlength="100" placeholder="For example, 25 kg">
+                        </div>
+                        <div class="form-group">
+                            <label for="inquiry-message">Message / Additional Questions</label>
+                            <textarea id="inquiry-message" rows="5" required maxlength="2500"></textarea>
+                        </div>
+                        <button type="submit" class="btn" id="inquiry-submit">Send Inquiry</button>
+                        <p class="form-message" id="inquiry-note" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <img src="images/logo.png" alt="5man's Rice Trading logo" class="logo">
+            <div>
+                <h3>Contacts</h3>
+                <p><a href="mailto:5mans@gmail.com">5mans@gmail.com</a></p>
+                <p><a href="tel:09712345512">09712345512</a></p>
+                <p>Davao City, Philippines</p>
+            </div>
+        </div>
+        <p class="copyright">&copy; 5man's Rice Trading. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
